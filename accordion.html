@@ -77,7 +77,7 @@ div.active{
       var TEMPLATE = '<h3><div class="arrow"></div><content select="h3:nth-of-type(##n##)"></content></h3><div><content select="div:nth-of-type(##n##)"></content></div>'
       window.onload = function() {
         var root = new WebKitShadowRoot(document.querySelector('#accordion'));
-        html = '<style scoped>##style##</style>'.replace(/##style##/g, $('[type="text/style1"]').textContent);
+        html = '<style>h3 {margin:0;}</style><style scoped>##style##</style>'.replace(/##style##/g, $('[type="text/style1"]').textContent);
         [].forEach.call(root.host.querySelectorAll('h3'), function(h3, i) {
           html += TEMPLATE.replace(/##n##/g, i+1);
         })
