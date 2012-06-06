@@ -1,38 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title></title>
+    <title>ShadowDOM Experiment (accordion)</title>
     <meta charset="utf-8" />
-    <script>
-      window.onload = function() {
-        [].forEach.call(document.querySelectorAll('h3'), function(h3) {
-          h3.onclick = function(e) {
-            var elem = document.querySelectorAll('h3, div');
-            for (var i = 0; i < elem.length; i++) {
-              elem[i].classList.remove('active');
-            }
-            h3.classList.add('active');
-            var div = h3.nextElementSibling;
-            div.classList.add('active');
-          };
-        });
-      };
-    </script>
-    <link rel="stylesheet" href="style.css">
+    <script src="accordion.js"></script>
   </head>
   <body>
     <header>
-      <h1>ShadowDOM Experiment: accordion Mock</h1>
+      <h1>ShadowDOM Experiment: accordion using ShadowDOM</h1>
       <ul>
         <li><a href="accordion_jquery.html" title="jQuery version">jQuery version</a></li>
-        <li><a href="accordion_mock.html" title="Mock version">Mock version</a></li>
         <li><a href="accordion_shadow.html" title="ShadowDOM version">ShadowDOM version</a></li>
       </ul><!-- / -->
     </header>
-    <section class="demo">
+    <section>
 <div id="accordion">
-  <h3 class="active"><div class="arrow"></div>Section 1</h3>
-  <div class="active">
+  <h3>Section 1</h3>
+  <div>
     <p>
     Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
     ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
@@ -40,7 +24,7 @@
     odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
     </p>
   </div>
-  <h3><div class="arrow"></div>Section 2</h3>
+  <h3>Section 2</h3>
   <div>
     <p>
     Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
@@ -49,7 +33,7 @@
     suscipit faucibus urna.
     </p>
   </div>
-  <h3><div class="arrow"></div>Section 3</h3>
+  <h3>Section 3</h3>
   <div>
     <p>
     Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
@@ -63,7 +47,7 @@
       <li>List item three</li>
     </ul>
   </div>
-  <h3><div class="arrow"></div>Section 4</h3>
+  <h3>Section 4</h3>
   <div>
     <p>
     Cras dictum. Pellentesque habitant morbi tristique senectus et netus
